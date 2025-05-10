@@ -1,0 +1,47 @@
+<div class="container">
+  <mat-card class="auth-card">
+    <mat-card-header>
+      <mat-card-title>Connexion</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <mat-form-field appearance="fill">
+          <mat-label>Email</mat-label>
+          <input matInput formControlName="email" type="email">
+          <mat-error *ngIf="loginForm.get('email')?.hasError('required')">
+            L'email est requis
+          </mat-error>
+          <mat-error *ngIf="loginForm.get('email')?.hasError('email')">
+            Veuillez entrer un email valide
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Mot de passe</mat-label>
+          <input matInput formControlName="password" type="password">
+          <mat-error *ngIf="loginForm.get('password')?.hasError('required')">
+            Le mot de passe est requis
+          </mat-error>
+        </mat-form-field>
+
+        <mat-checkbox formControlName="remember-me">Se souvenir de moi</mat-checkbox>
+
+        <div class="error-message" *ngIf="errorMessage">{{errorMessage}}</div>
+
+        <button mat-raised-button color="primary" type="submit" [disabled]="loginForm.invalid">Se connecter</button>
+      </form>
+
+      <div class="links">
+        <a routerLink="/forgot-password">Mot de passe oublié ?</a>
+        <a routerLink="/register">Créer un compte</a>
+      </div>
+
+      <div class="google-login">
+        <button type="button" class="google-btn" (click)="loginWithGoogle()">
+          <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Logo Google" />
+          <span>Continuer avec Google</span>
+        </button>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

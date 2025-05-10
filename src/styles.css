@@ -1,0 +1,209 @@
+body {
+  font-family: 'Roboto', 'Helvetica Neue', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: url('../public/metro.png') no-repeat center center fixed;
+  background-size: cover;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  min-height: 100vh;
+  background: rgba(0, 0, 0, 0.3); 
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 450px;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.95); 
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(8px); 
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.auth-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+}
+
+mat-card-header {
+  display: flex;
+  justify-content: center;
+}
+
+mat-card-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #1a3c6d; 
+  text-align: center;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+mat-form-field {
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+mat-label {
+  color: #333;
+  font-weight: 500;
+}
+
+input[matInput] {
+  background: rgba(245, 245, 245, 0.8);
+  border-radius: 4px;
+  padding: 0.5rem;
+}
+
+button[mat-raised-button] {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  font-weight: 500;
+  background: #1976d2; 
+  color: white;
+  border-radius: 8px;
+  margin-top: 1rem;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button[mat-raised-button]:hover:not(:disabled) {
+  background: #1565c0;
+  transform: scale(1.02);
+}
+
+button[mat-raised-button]:disabled {
+  background: #b0bec5;
+  cursor: not-allowed;
+}
+
+mat-checkbox {
+  margin: 1rem 0;
+  color: #333;
+}
+
+.message {
+  color: #2e7d32;
+  margin: 1rem 0;
+  font-size: 0.95rem;
+  text-align: center;
+  background: rgba(200, 230, 201, 0.3);
+  padding: 0.5rem;
+  border-radius: 4px;
+}
+
+.error-message {
+  color: #d32f2f; 
+  margin: 1rem 0;
+  font-size: 0.95rem;
+  text-align: center;
+  background: rgba(255, 205, 210, 0.3);
+  padding: 0.5rem;
+  border-radius: 4px;
+}
+
+.links {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+}
+
+.links a {
+  color: #1976d2;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.links a:hover {
+  color: #1565c0;
+  text-decoration: underline;
+}
+
+.google-login {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.google-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: #ffffff;
+  color: #333;
+  font-weight: 500;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 0.75rem;
+  cursor: pointer;
+  width: 100%;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.google-btn img {
+  width: 24px;
+  height: 24px;
+}
+
+.google-btn:hover {
+  background: #f5f5f5;
+  transform: scale(1.02);
+}
+
+.google-btn span {
+  font-size: 1rem;
+}
+
+a {
+  text-decoration: none;
+  color: #1976d2;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .auth-card {
+    margin: 1rem;
+    padding: 1.5rem;
+    max-width: 100%;
+  }
+
+  mat-card-title {
+    font-size: 1.5rem;
+  }
+
+  .links {
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: center;
+  }
+
+  .links a {
+    text-align: center;
+  }
+
+  button[mat-raised-button], .google-btn {
+    padding: 0.6rem;
+    font-size: 0.9rem;
+  }
+}
